@@ -39,6 +39,7 @@ body {
     padding: 160px 20px;
 }
 
+/* TITRES */
 .hero h1 {
     font-size: 3rem;
 }
@@ -52,23 +53,60 @@ body {
     margin: 20px auto;
 }
 
-/* BUTTONS */
-.buttons a {
+/* CURSEUR MACHINE A ECRIRE */
+#name::after {
+    content: "";
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 50%, 100% { opacity: 1; }
+    25%, 75% { opacity: 0; }
+}
+
+/* BOUTONS */
+.buttons {
+    margin-top: 30px;
+}
+
+.btn {
+    position: relative;
     display: inline-block;
-    padding: 12px 20px;
+    padding: 14px 28px;
     margin: 10px;
-    border-radius: 8px;
+    border-radius: 10px;
+    overflow: hidden;
     text-decoration: none;
-}
-
-.btn-primary {
-    background: #38bdf8;
-    color: black;
-}
-
-.btn-secondary {
-    border: 1px solid white;
+    font-weight: bold;
+    border: 2px solid #38bdf8;
     color: white;
+    transition: color 0.3s ease;
+}
+
+.btn span {
+    position: relative;
+    z-index: 2;
+}
+
+/* effet remplissage */
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #38bdf8;
+    z-index: 1;
+    transition: width 0.4s ease;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+.btn:hover {
+    color: #0f172a;
 }
 
 /* SECTIONS */
@@ -118,14 +156,10 @@ section {
     text-align: center;
 }
 
-/* RESPONSIVE MOBILE */
+/* RESPONSIVE */
 @media (max-width: 768px) {
     .navbar {
         flex-direction: column;
-    }
-
-    .navbar nav {
-        margin-top: 10px;
     }
 
     .hero h1 {
