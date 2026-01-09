@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f172a;
+    color: white;
+}
+
+/* NAVBAR */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15,23,42,0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    z-index: 1000;
+}
+
+.navbar nav a {
+    color: white;
+    margin-left: 15px;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(15,23,42,0.85), rgba(15,23,42,0.85)),
+                url("../images/it-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 160px 20px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero h3 {
+    color: #38bdf8;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+/* BUTTONS */
+.buttons a {
+    display: inline-block;
+    padding: 12px 20px;
+    margin: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: #38bdf8;
+    color: black;
+}
+
+.btn-secondary {
+    border: 1px solid white;
+    color: white;
+}
+
+/* SECTIONS */
+section {
+    padding: 100px 20px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.center-text {
+    text-align: center;
+}
+
+/* COMPETENCES */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.skill-card {
+    background: #1e293b;
+    padding: 25px;
+    border-radius: 15px;
+    width: 320px;
+}
+
+.skill-card h2 {
+    color: #38bdf8;
+    text-align: center;
+}
+
+.skill-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.skill-card li {
+    background: #334155;
+    margin: 8px 0;
+    padding: 8px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+/* RESPONSIVE MOBILE */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+    }
+
+    .navbar nav {
+        margin-top: 10px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .skill-card {
+        width: 100%;
+    }
+}
